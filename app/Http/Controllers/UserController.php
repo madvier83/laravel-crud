@@ -39,9 +39,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'name' => 'required|min:4|max:64',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         ]);
         $data['password'] = bcrypt($data['password']);
 
@@ -85,9 +85,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'name' => 'required|min:4|max:64',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         ]);
         $data['password'] = bcrypt($data['password']);
 

@@ -15,15 +15,18 @@
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="text" value="{{ $user->name }}" class="form-control" name="name">
+                    <input type="text" value="{{ old('name',$user->name) }}" class="form-control @error('name') is-invalid @enderror" name="name">
+                    @error('name')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" value="{{ $user->email }}" class="form-control" name="email">
+                    <input type="email" value="{{ old('email',$user->email) }}" class="form-control @error('email') is-invalid @enderror" name="email">
+                    @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                    @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
                 <button type="submit" class="btn btn-success">Update</button>
             </form>

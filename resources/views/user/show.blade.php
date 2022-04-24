@@ -13,9 +13,9 @@
             <h1 class="mt-5">User Read</h1>
             <a href="/user" class="btn btn-secondary">Back</a>
             <div class="container mt-4">
-                <h4>name : {{ $user->name }}</h4>
-                <h4>email : {{ $user->email }}</h4>
-                <h4>created at : {{ $user->created_at }}</h4>
+                <h4>Name : {{ $user->name }}</h4>
+                <h4>Email : {{ $user->email }}</h4>
+                <h4>Created at : {{ $user->created_at }}</h4>
             </div>
         </div>
 

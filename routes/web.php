@@ -23,7 +23,7 @@ Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
 Route::post('/user', [UserController::class, 'store']);
 
-Route::get('/user/{id}/show', [UserController::class, 'show']);
+Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::get('/user/{id}/update', [UserController::class, 'edit']);
 Route::post('/user/{id}', [UserController::class, 'update']);

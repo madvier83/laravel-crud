@@ -30,7 +30,10 @@
                         <td>
                             <a href="/user/{{ $user->id }}" class="btn badge bg-info">Show</a>
                             <a href="/user/{{ $user->id }}/update" class="btn badge bg-success">Update</a>
-                            <a href="/user/{{ $user->id }}/delete" class="btn badge bg-danger" onclick="return alert('Delete user?')">Delete</a>
+                            <form action="/user/{{ $user->id }}/delete" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn badge bg-danger" onclick="return confirm('Delete user?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
